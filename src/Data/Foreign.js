@@ -27,3 +27,9 @@ exports.isUndefined = function (value) {
 exports.isArray = Array.isArray || function (value) {
   return Object.prototype.toString.call(value) === "[object Array]";
 };
+
+exports.isEmpty = function (value) {
+  return exports.isNull(value) || exports.isUndefined(value) ||
+         (exports.isArray(value) && value.length == 0) ||
+         JSON.stringify(value) == JSON.stringify({});
+}

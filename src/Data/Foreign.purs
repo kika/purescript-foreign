@@ -115,6 +115,9 @@ foreign import isUndefined :: Foreign -> Boolean
 -- | Test whether a foreign value is an array
 foreign import isArray :: Foreign -> Boolean
 
+-- | Test whether the Foreign value is empty
+foreign import isEmpty :: Foreign -> Boolean
+
 -- | Attempt to coerce a foreign value to a `String`.
 readString :: Foreign -> F String
 readString = unsafeReadTagged "String"
